@@ -10,8 +10,9 @@
     <CompletedCardsList /> -->
   </main>
   <footer>
-    <!-- <BottomNav /> -->
+    <BottomNavBar />
   </footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

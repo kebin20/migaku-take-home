@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     BaseCard: typeof import('./src/components/base/BaseCard.vue')['default']
     BottomNav: typeof import('./src/components/BottomNav.vue')['default']
+    BottomNavBar: typeof import('./src/components/BottomNavBar.vue')['default']
     CardItem: typeof import('./src/components/cards/CardItem.vue')['default']
     CompletedCardsList: typeof import('./src/components/cards/CompletedCardsList.vue')['default']
     MigakuHeroSection: typeof import('./src/components/MigakuHeroSection.vue')['default']
