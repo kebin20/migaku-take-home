@@ -2,16 +2,15 @@
 
 <template>
   <header>
-    <button>Monkey</button>
-    <ProgressBar />
+    <ProgressNavBar imageSrc="src\assets\icons\status-bar.png" progressText="0" />
   </header>
   <main>
-    <MigakuHeroSection />
+    <!-- <MigakuHeroSection />
     <TodayCardsList />
-    <CompletedCardsList />
+    <CompletedCardsList /> -->
   </main>
   <footer>
-    <BottomNav />
+    <!-- <BottomNav /> -->
   </footer>
 </template>
 
