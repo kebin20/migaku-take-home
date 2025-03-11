@@ -1,10 +1,6 @@
-<script setup lang="ts">
-import { today, completedDecks } from '@/data/mockData'
-</script>
-
 <template>
   <header>
-    <ProgressNavBar imageSrc="src/assets/icons/status-bar.png" progressText="0" />
+    <ProgressNavBar @open-loading="openLoading" />
   </header>
   <main>
     <MigakuHeroSection />
@@ -16,7 +12,22 @@ import { today, completedDecks } from '@/data/mockData'
   <footer>
     <BottomNavBar />
   </footer>
+  <LoadingScreen v-if="isLoading" />
 </template>
+
+<script setup lang="ts">
+import { today, completedDecks } from '@/data/mockData'
+import { ref } from 'vue'
+
+const isLoading = ref(false)
+
+function openLoading() {
+  isLoading.value = true
+  setTimeout(() => {
+    isLoading.value = false
+  }, 3000)
+}
+</script>
 
 <style scoped>
 .carousel-section {

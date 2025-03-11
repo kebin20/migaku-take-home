@@ -1,6 +1,6 @@
 <template>
   <div class="progress-nav-bar">
-    <button class="profile-button">
+    <button class="profile-button" @click="handleProfileClick">
       <img src="@/assets/icons/profile-button.png" alt="Profile Button" class="profile-img" />
     </button>
     <div class="progress-bar" @click="toggleProgress">
@@ -21,8 +21,15 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { defineEmits } from 'vue'
+
+const emit = defineEmits(['open-loading'])
 
 const progressPercent = ref(0)
+
+function handleProfileClick() {
+  emit('open-loading')
+}
 
 function toggleProgress() {
   progressPercent.value = progressPercent.value === 0 ? 100 : 0
@@ -35,6 +42,7 @@ function toggleProgress() {
   align-items: center;
   gap: 1.4em;
   padding: 49px 25px;
+  z-index: 9999;
 }
 
 .profile-button {

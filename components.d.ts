@@ -17,6 +17,7 @@ declare module 'vue' {
     CardsList: typeof import('./src/components/cards/CardsList.vue')['default']
     CompletedCardsList: typeof import('./src/components/cards/CompletedCardsList.vue')['default']
     copy: typeof import('./src/components/cards/CardsCarousel copy.vue')['default']
+    LoadingScreen: typeof import('./src/components/LoadingScreen.vue')['default']
     MigakuHeroSection: typeof import('./src/components/MigakuHeroSection.vue')['default']
     PrimaryButton: typeof import('./src/components/base/PrimaryButton.vue')['default']
     ProgressBar: typeof import('./src/components/ProgressBar.vue')['default']
