@@ -1,43 +1,36 @@
 <template>
   <BaseCard>
     <div class="card-item">
-      <div class="card-image" :style="backgroundImageStyle">
+      <div class="card-image" :style="{ backgroundColor: backgroundImageStyleComputed }">
         <img
-          v-if="isComplete"
-          src="@\assets\icons\checkmark.png"
+          v-if="status === 'completed'"
+          src="@/assets/icons/checkmark.png"
           alt="Checkmark"
           class="checkmark"
         />
-        <img :src="imageSrc" alt="Card Image" class="icon" />
+        <img v-if="imageSrc" :src="imageSrc" alt="Card Image" class="icon" />
+        <p v-else>P</p>
       </div>
       <p class="topic-title">{{ description }}</p>
-      <StatusLabel inReview noOfReviews="21" :status="{ status }" />
+      <StatusLabel :noOfReviews="noOfReviews" :status="status" />
     </div>
   </BaseCard>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'CardItem',
-  props: {
-    imageSrc: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    backgroundImageStyle: {
-      type: String,
-      required: false,
-    },
-    isComplete: {
-      type: Boolean,
-      required: false,
-    },
-  },
+<script setup lang="ts">
+import { computed } from 'vue'
+
+interface CardItemProps {
+  imageSrc: string
+  description: string
+  backgroundImageStyle?: string
+  status?: string
+  noOfReviews?: number | string
 }
+
+const props = defineProps<CardItemProps>()
+
+const backgroundImageStyleComputed = computed(() => props.backgroundImageStyle || '#f0f0f0')
 </script>
 
 <style scoped>
@@ -76,7 +69,12 @@ export default {
   justify-content: center;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
+
 .topic-title {
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 125px;
 }
 </style>

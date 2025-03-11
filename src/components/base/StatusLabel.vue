@@ -8,9 +8,6 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  inReview: Boolean,
-  paused: Boolean,
-  completed: Boolean,
   status: String,
   noOfReviews: Number,
 })
@@ -34,13 +31,12 @@ const statusStyle = computed(() => {
     }
   } else if (props.status === 'paused') {
     return {
-      backgroundColor: 'var(--paused-bg)',
-      color: 'var(--paused-text)',
+      backgroundColor: 'var( --color--status-label-paused-magnolia)',
     }
   } else if (props.status === 'completed') {
     return {
-      backgroundColor: 'var(--completed)',
-      color: 'var(--completed-text)',
+      backgroundColor: 'var(--color-status-label-completed)',
+      color: 'var(--color-status-label-completed-text)',
     }
   }
   return {}

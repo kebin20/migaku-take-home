@@ -4,6 +4,7 @@
   --color-status-label: #3c91ff;
   --color-status-label-completed: #ddfff9;
   --color-status-label-completed-text: #00c7a4;
+  --color--status-label-paused-magnolia: #f8f4feff;
   --color-primary-gradient: linear-gradient(90deg, #ff9345, #fe4670);
   --color-white: #ffffff;
   --color-saxophone: #ffebdc;
@@ -13,7 +14,7 @@
 
   --title-font-size: 36px;
   --subtitle-font-size: 24px;
-  --base-font-size: 16px; 
+  --base-font-size: 16px;
   --label-font-size: 12px;
   --primary-button-font-size: 14px;
 }

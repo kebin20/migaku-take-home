@@ -6,22 +6,37 @@
     >
       {{ title }}
     </h1>
-    <div class="carousel">
-      <CardItem
-        imageSrc="src\assets\icons\saxophone.png"
-        description="test"
-        backgroundImageStyle="background-color: var(--color-saxophone)"
-      />
-    </div>
+    <swiper :slides-per-view="2" space-between="0" class="carousel">
+      <swiper-slide v-for="card in cards" :key="card.id">
+        <CardItem
+          :imageSrc="card.src"
+          :description="card.description"
+          :backgroundImageStyle="card.backgroundImageStyle"
+          :status="card.status"
+          :noOfReviews="card.noOfReviews"
+        />
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  title: string
-  titleClass: string
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+
+interface Card {
+  id: number
+  src: string
+  backgroundImageStyle: string
   description: string
+  status: string
+  noOfReviews: number | string
+}
+
+const { title, isToday, cards } = defineProps<{
+  title: string
   isToday: boolean
+  cards: Card[]
 }>()
 </script>
 
@@ -38,7 +53,7 @@ defineProps<{
 }
 
 .carousel {
-  display: flex;
-  gap: 1em;
+  width: 86%;
+  height: 205px;
 }
 </style>
