@@ -3,24 +3,35 @@
     <button class="profile-button">
       <img src="@/assets/icons/profile-button.png" alt="Profile Button" class="profile-img" />
     </button>
-    <div class="progress-bar">
-      <img :src="imageSrc" alt="Progress" class="progress-image" />
-      <span class="progress-text">{{ progressText }}%</span>
+    <div class="progress-bar" @click="toggleProgress">
+      <div class="progress-wrapper">
+        <img src="@/assets/icons/status-bar.png" alt="Blank Progress" class="squiggly-bg" />
+        <div class="progress-fill" :style="{ width: progressPercent + '%' }">
+          <img
+            src="@/assets/icons/status-bar-full.png"
+            alt="Filled Progress"
+            class="squiggly-fill"
+          />
+        </div>
+      </div>
+      <span class="progress-text">{{ progressPercent }}%</span>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  imageSrc: string
-  progressText: string
-}>()
+import { ref } from 'vue'
+
+const progressPercent = ref(0)
+
+function toggleProgress() {
+  progressPercent.value = progressPercent.value === 0 ? 100 : 0
+}
 </script>
 
 <style scoped>
 .progress-nav-bar {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   gap: 1.4em;
   padding: 49px 25px;
@@ -46,17 +57,40 @@ defineProps<{
 .progress-bar {
   width: 180px;
   height: 40px;
+  display: flex;
+  align-items: center;
   background: var(--color-white);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 2em;
-  display: flex;
-  align-items: center;
   padding: 1em;
+  gap: 1em;
+  cursor: pointer;
 }
 
-.progress-image {
+.progress-wrapper {
+  position: relative;
   width: 105px;
-  margin-right: 1em;
+  height: auto;
+}
+
+.squiggly-bg {
+  display: block;
+  width: 100%;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  overflow: hidden;
+  transition: width 0.5s ease;
+}
+
+.squiggly-fill {
+  display: block;
+  width: 100%;
 }
 
 .progress-text {
