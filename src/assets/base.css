@@ -11,7 +11,9 @@
   --color-dolphin: #dff4ff;
   --color-sakura: #ffe0e7;
   --color-scooter: #f2ffa0;
+  --color-blue: #3c91ff;
 
+  --letter-icon-font-size: 40px;
   --title-font-size: 36px;
   --subtitle-font-size: 24px;
   --base-font-size: 16px;
@@ -41,9 +43,6 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
   line-height: 1.6;
   font-size: var(--base-font-size);
   text-rendering: optimizeLegibility;

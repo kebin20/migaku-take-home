@@ -46,6 +46,7 @@ export const completedDecks = [
     id: 3,
     src: '',
     backgroundImageStyle: 'var(--color-dolphin)',
+    textColor: 'var(--color-blue)',
     description: 'Kanji deck',
     status: 'completed',
     noOfReviews: 0,

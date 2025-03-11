@@ -9,7 +9,9 @@
           class="checkmark"
         />
         <img v-if="imageSrc" :src="imageSrc" alt="Card Image" class="icon" />
-        <p v-else>P</p>
+        <p v-else class="capital-letter" :style="{ color: textColor }">
+          {{ capitalizedFirstLetter }}
+        </p>
       </div>
       <p class="topic-title">{{ description }}</p>
       <StatusLabel :noOfReviews="noOfReviews" :status="status" />
@@ -26,11 +28,17 @@ interface CardItemProps {
   backgroundImageStyle?: string
   status?: string
   noOfReviews?: number | string
+  textColor?: string
 }
 
 const props = defineProps<CardItemProps>()
 
 const backgroundImageStyleComputed = computed(() => props.backgroundImageStyle || '#f0f0f0')
+
+const capitalizedFirstLetter = computed(() => {
+  if (!props.description) return ''
+  return props.description.charAt(0).toUpperCase()
+})
 </script>
 
 <style scoped>
@@ -76,5 +84,10 @@ const backgroundImageStyleComputed = computed(() => props.backgroundImageStyle |
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 125px;
+}
+
+.capital-letter {
+  font-size: var(--letter-icon-font-size);
+  font-weight: bold;
 }
 </style>

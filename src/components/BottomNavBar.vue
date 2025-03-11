@@ -23,9 +23,8 @@
   background: var(--color-white);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 2em;
-  display: flex;
-  align-items: center;
   padding: 1em 2em;
+  z-index: 9999;
 }
 
 .bottom-nav-bar-button {

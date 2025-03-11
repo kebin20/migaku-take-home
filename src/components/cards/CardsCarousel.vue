@@ -14,6 +14,7 @@
           :backgroundImageStyle="card.backgroundImageStyle"
           :status="card.status"
           :noOfReviews="card.noOfReviews"
+          :textColor="card.textColor"
         />
       </swiper-slide>
     </swiper>
@@ -25,6 +26,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 
 interface Card {
+  textColor?: string
   id: number
   src: string
   backgroundImageStyle: string
@@ -45,6 +47,7 @@ const { title, isToday, cards } = defineProps<{
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 10;
 }
 
 .title {
