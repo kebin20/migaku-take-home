@@ -1,10 +1,10 @@
 <template>
   <div class="bottom-nav-bar">
     <button class="bottom-nav-bar-button">
-      <img src="C:\Users\ktanz\webprojects\migaku-ui-test\src\assets\icons\books.svg" alt="" />
+      <img src="@\assets\icons\books.svg" alt="Book Icon" />
     </button>
     <button class="bottom-nav-bar-button">
-      <img src="C:\Users\ktanz\webprojects\migaku-ui-test\src\assets\icons\book-stack.svg" alt="" />
+      <img src="@\assets\icons\book-stack.svg" alt="Stack of Books Icon" />
     </button>
   </div>
 </template>
@@ -13,7 +13,12 @@
 
 <style scoped>
 .bottom-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: 0 auto;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
   align-items: center;

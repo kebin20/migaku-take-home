@@ -1,11 +1,7 @@
 <template>
   <div class="progress-nav-bar">
     <button class="profile-button">
-      <img
-        src="C:\Users\ktanz\webprojects\migaku-ui-test\src\assets\icons\profile-button.png"
-        alt="Profile Button"
-        class="profile-img"
-      />
+      <img src="@/assets/icons/profile-button.png" alt="Profile Button" class="profile-img" />
     </button>
     <div class="progress-bar">
       <img :src="imageSrc" alt="Progress" class="progress-image" />
@@ -26,7 +22,8 @@ defineProps<{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 2em;
+  gap: 1.4em;
+  padding: 49px 25px;
 }
 
 .profile-button {
