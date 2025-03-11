@@ -5,7 +5,7 @@
     </button>
     <div class="progress-bar">
       <img :src="imageSrc" alt="Progress" class="progress-image" />
-      <span>{{ progressText }}%</span>
+      <span class="progress-text">{{ progressText }}%</span>
     </div>
   </div>
 </template>
@@ -57,5 +57,9 @@ defineProps<{
 .progress-image {
   width: 105px;
   margin-right: 1em;
+}
+
+.progress-text {
+  font-weight: bold;
 }
 </style>

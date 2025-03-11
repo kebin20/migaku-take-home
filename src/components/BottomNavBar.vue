@@ -6,19 +6,15 @@
     <button class="bottom-nav-bar-button">
       <img src="@\assets\icons\book-stack.svg" alt="Stack of Books Icon" />
     </button>
-  </div>
+  </div> 
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped>
 .bottom-nav-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   margin: 0 auto;
-  margin-bottom: 2em;
+  margin-top: 4em;
   display: flex;
   justify-content: center;
   align-items: center;
