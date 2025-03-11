@@ -6,12 +6,20 @@
   </header>
   <main>
     <MigakuHeroSection />
-    <!-- <TodayCardsList /> -->
-    <!-- <CompletedCardsList /> -->
+    <div class="carousel-section">
+      <CardsCarousel title="Today" isToday/>
+      <CardsCarousel title="Completed" />
+    </div>
   </main>
   <footer>
     <BottomNavBar />
   </footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+.carousel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+</style>
