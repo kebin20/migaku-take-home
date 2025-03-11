@@ -1,39 +1,31 @@
 # migaku-ui-test
 
-This template should help get you started developing with Vue 3 in Vite.
+ ![]()
 
-## Recommended IDE Setup
+## Overview
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- A UI implementation test as part of the technical screening process for Migaku
 
-## Type Support for `.vue` Imports in TS
+### Basic Functions
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Middle migaku heart is pressable
+- Clicking on the top navbar will show the progress bar reaching 100%
+- Clicking on the green monkey button in the top navbar will show a loading screen
+  - Loading text will spin anti-clockwise
+  - Icon will spin clockwise
+- Card lists for Today and Completed are scrollable as a carousel
+- Clicking on one of the completed cards will bring up a screen from bottom of the screen
+  - When clicking on the study button, a small loading spinner is shown
 
-## Customize configuration
+### Links
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Solution URL: []()
+- Live Site URL: []()
 
-## Project Setup
+### Built with
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Vue 3
+- Typescript
