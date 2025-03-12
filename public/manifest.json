@@ -1,0 +1,6 @@
+{
+  "name": "Migaku Test App",
+  "short_name": "Migaku Test App",
+  "start_url": "/",
+  "display": "standalone"
+}
