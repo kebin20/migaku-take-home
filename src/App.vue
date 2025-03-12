@@ -90,7 +90,7 @@ const openLoading = () => {
 }
 
 .content-wrapper {
-  padding-top: 175px;
+  padding-top: 125px;
   padding-bottom: 130px;
   min-height: 100%;
 }

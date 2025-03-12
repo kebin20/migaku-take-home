@@ -57,7 +57,7 @@ const handleCardClick = (card: Deck) => {
   font-size: var(--title-font-size);
 }
 .carousel {
-  width: 86%;
+  width: 91%;
   height: 205px;
 }
 </style>
