@@ -24,17 +24,17 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
-import { Card } from '@/types/interfaces'
+import type { Deck } from '@/types/interfaces'
 
 const { title, isToday, cards } = defineProps<{
   title: string
   isToday?: boolean
-  cards: Card[]
+  cards: Deck[]
 }>()
 
 const emit = defineEmits(['cardClicked'])
 
-const handleCardClick = (card: Card) => {
+const handleCardClick = (card: Deck) => {
   emit('cardClicked', card)
 }
 </script>

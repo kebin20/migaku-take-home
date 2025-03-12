@@ -5,6 +5,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
+
 type StatusType = 'inReview' | 'paused' | 'completed'
 
 const { status, noOfReviews } = defineProps<{

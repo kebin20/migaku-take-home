@@ -23,9 +23,7 @@
 
 @font-face {
   font-family: 'GT Maru';
-  src:
-    url('@/assets/fonts/GTMaru-Regular-Trial.woff2') format('woff2'),
-    url('@/assets/fonts/GTMaru-Regular-Trial.woff') format('woff');
+  src: url('@/assets/fonts/GT-Maru-Regular-Trial.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }

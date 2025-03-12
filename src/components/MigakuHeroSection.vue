@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import normalHeart from '@/assets/hero/migaku-heart.png'
 import pressedHeart from '@/assets/hero/migaku-heart-pressed.png'
+import { ref } from 'vue'
 
 const isPressed = ref(false)
 

@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import migakuHead from '@/assets/icons/loading-button/head-up.png'
+import { ref } from 'vue';
 
 const { noOfCards } = defineProps<{
   noOfCards: number

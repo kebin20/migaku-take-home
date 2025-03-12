@@ -22,10 +22,21 @@
 
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
+import { nextTick, onMounted, ref, toRefs, type PropType } from 'vue'
+import type { Deck } from '@/types/interfaces.ts'
 
 const props = defineProps({
   initialDeck: {
-    type: Object as PropType<CardItemProps>,
+    type: Object as PropType<Deck>,
+    default: () => ({
+      backgroundImageStyle: '',
+      description: '',
+      noOfReviews: 0,
+      status: '',
+      imageSrc: '',
+      textColor: '',
+      learntWords: 0,
+    }),
   },
 })
 

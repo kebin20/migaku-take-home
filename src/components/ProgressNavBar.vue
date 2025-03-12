@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import ProgressBarIcon from '@/assets/icons/ProgressBarIcon.vue'
+import { ref } from 'vue'
 
 const emit = defineEmits(['open-loading'])
 const progressPercent = ref(0)

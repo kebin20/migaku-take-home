@@ -28,13 +28,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { today, completedDecks } from '@/data/mockData'
+import type { Deck } from '@/types/interfaces.ts'
+import { ref } from 'vue'
 
 const isLoading = ref(false)
 const isBottomSheetVisible = ref(false)
 
-const openBottomSheet = (deck) => {
+const openBottomSheet = (deck: Deck) => {
   if (deck === completedDecks[0]) {
     isBottomSheetVisible.value = true
   }
