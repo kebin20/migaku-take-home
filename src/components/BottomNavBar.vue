@@ -17,6 +17,7 @@ import BookStackIcon from '@/assets/icons/BookStackIcon.vue'
 <style scoped>
 .bottom-nav-bar {
   margin: 0 auto;
+  margin-bottom: 2.5em;
   display: flex;
   justify-content: center;
   align-items: center;

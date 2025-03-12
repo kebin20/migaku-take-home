@@ -15,8 +15,6 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
-
 <style scoped>
 .loading-overlay {
   position: fixed;
@@ -37,18 +35,15 @@
   height: 230px;
 }
 
-/* Circular loading text rotates continuously clockwise */
 .circular-loading {
   position: absolute;
   top: 0;
   left: 0;
   width: 233px;
   height: 230px;
-  /* Animate clockwise rotation */
   animation: rotateAntiClockwise 3s linear infinite;
 }
 
-/* Migaku head positioned in the center rotates anticlockwise */
 .migaku-head {
   position: absolute;
   top: 50%;
@@ -56,11 +51,9 @@
   transform: translate(-50%, -50%);
   width: 233px;
   height: 230px;
-  /* Animate anticlockwise rotation */
   animation: rotateClockwise 3s linear infinite;
 }
 
-/* Keyframes for clockwise rotation (for the head) */
 @keyframes rotateClockwise {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -70,7 +63,6 @@
   }
 }
 
-/* Keyframes for anticlockwise rotation (for the loading text) */
 @keyframes rotateAntiClockwise {
   from {
     transform: rotate(0deg);

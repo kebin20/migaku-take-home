@@ -1,20 +1,22 @@
 <template>
   <div class="hero-section">
-    <img src="@/assets/icons/hero/planets-a.png" alt="Image 1" class="image purple-planet" />
-    <img src="@/assets/icons/hero/planets-b.png" alt="Image 2" class="image comet" />
+    <img src="@/assets/hero/planets-a.png" alt="Purple Planet" class="image purple-planet" />
+    <img src="@/assets/hero/planets-b.png" alt="Comet" class="image comet" />
     <button class="heart-button" @click="toggleHeart">
-      <img :src="isPressed ? pressedHeart : normalHeart" class="image migaku-heart" alt="Heart" />
+      <img
+        :src="isPressed ? pressedHeart : normalHeart"
+        class="image migaku-heart"
+        alt="Migaku Heart"
+      />
     </button>
-    <img src="@/assets/icons/hero/planets-d.png" alt="Image 5" class="image planets" />
-    <img src="@/assets/icons/hero/planets-c.png" alt="Image 4" class="image earth" />
+    <img src="@/assets/hero/planets-d.png" alt="Planets" class="image planets" />
+    <img src="@/assets/hero/planets-c.png" alt="Earth" class="image earth" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
-import normalHeart from '@/assets/icons/hero/migaku-heart.png'
-import pressedHeart from '@/assets/icons/hero/migaku-heart-pressed.png'
+import normalHeart from '@/assets/hero/migaku-heart.png'
+import pressedHeart from '@/assets/hero/migaku-heart-pressed.png'
 
 const isPressed = ref(false)
 

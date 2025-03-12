@@ -12,10 +12,7 @@
         {{ capitalizedFirstLetter }}
       </p>
     </div>
-    <p
-      class="topic-title"
-      :style="isBottomSheet ? { 'max-width': '175px' } : { 'max-width': '125px' }"
-    >
+    <p class="topic-title" :class="{ 'topic-title-expanded': isBottomSheet }">
       {{ description }}
     </p>
     <StatusLabel :noOfReviews="noOfReviews" :status="status" />
@@ -23,29 +20,25 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { defineEmits } from 'vue'
 import { Deck } from '@/types/interfaces.ts'
 
-const props = defineProps<{
-  imageSrc: Deck['imageSrc']
-  description: Deck['description']
-  backgroundImageStyle: Deck['backgroundImageStyle']
-  noOfReviews: Deck['noOfReviews']
-  status: Deck['status']
-  textColor: Deck['textColor']
-  isBottomSheet: boolean
-}>()
+type CardProps = Deck & {
+  isBottomSheet?: boolean
+}
+
+const { isBottomSheet, backgroundImageStyle, description, noOfReviews, status, imageSrc } =
+  defineProps<CardProps>()
+
 const emit = defineEmits(['cardClicked'])
 
-const backgroundImageStyleComputed = computed(() => props.backgroundImageStyle || '#f0f0f0')
+const backgroundImageStyleComputed = computed(() => backgroundImageStyle || '#f0f0f0')
 
 const capitalizedFirstLetter = computed(() => {
-  if (!props.description) return ''
-  return props.description.charAt(0).toUpperCase()
+  if (!description) return ''
+  return description.charAt(0).toUpperCase()
 })
 
-function handleClick() {
+const handleClick = () => {
   emit('cardClicked')
 }
 </script>
@@ -93,6 +86,10 @@ function handleClick() {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 125px;
+}
+
+.topic-title-expanded {
+  max-width: 175px;
 }
 
 .capital-letter {

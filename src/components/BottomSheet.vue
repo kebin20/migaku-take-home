@@ -21,7 +21,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, nextTick, toRefs, defineEmits, PropType } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 
 const props = defineProps({
@@ -37,7 +36,7 @@ const emit = defineEmits(['close'])
 
 const { initialDeck } = toRefs(props)
 
-function closeBottomSheet() {
+const closeBottomSheet = () => {
   show.value = false
   setTimeout(() => {
     emit('close')

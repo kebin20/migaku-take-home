@@ -1,45 +1,25 @@
 <template>
-  <div class="status-label" :style="statusStyle">
+  <div class="status-label" :class="`status-${status}`">
     <p>{{ statusText }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+type StatusType = 'inReview' | 'paused' | 'completed'
 
-const props = defineProps({
-  status: String,
-  noOfReviews: Number,
-})
+const { status, noOfReviews } = defineProps<{
+  status: StatusType
+  noOfReviews?: number
+}>()
 
 const statusText = computed(() => {
-  if (props.status === 'inReview') {
-    return `${props.noOfReviews} reviews`
-  } else if (props.status === 'paused') {
-    return 'Paused'
-  } else if (props.status === 'completed') {
-    return 'Completed'
+  const statusMap = {
+    inReview: `${noOfReviews} reviews`,
+    paused: 'Paused',
+    completed: 'Completed',
   }
-  return ''
-})
 
-const statusStyle = computed(() => {
-  if (props.status === 'inReview') {
-    return {
-      backgroundColor: 'var(--color-status-label)',
-      color: 'var(--color-white)',
-    }
-  } else if (props.status === 'paused') {
-    return {
-      backgroundColor: 'var( --color--status-label-paused-magnolia)',
-    }
-  } else if (props.status === 'completed') {
-    return {
-      backgroundColor: 'var(--color-status-label-completed)',
-      color: 'var(--color-status-label-completed-text)',
-    }
-  }
-  return {}
+  return statusMap[status] || ''
 })
 </script>
 
@@ -48,9 +28,23 @@ const statusStyle = computed(() => {
   font-family: 'GT Maru', sans-serif;
   font-size: var(--label-font-size);
   font-weight: bold;
-  background-color: gray;
   border-radius: 62px;
   padding: 2px 10px;
   text-align: center;
+}
+
+.status-inReview {
+  background-color: var(--color-status-label);
+  color: var(--color-white);
+}
+
+.status-paused {
+  background-color: var(--color--status-label-paused-magnolia);
+  color: var(--color-text);
+}
+
+.status-completed {
+  background-color: var(--color-status-label-completed);
+  color: var(--color-status-label-completed-text);
 }
 </style>

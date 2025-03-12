@@ -6,8 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { defineProps } from 'vue'
 import migakuHead from '@/assets/icons/loading-button/head-up.png'
 
 const { noOfCards } = defineProps<{
@@ -33,7 +31,7 @@ const handleClick = () => {
   border-radius: 2000px;
   background: var(--color-primary-gradient);
   border: none;
-  color: white;
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;

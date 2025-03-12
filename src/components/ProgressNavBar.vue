@@ -13,26 +13,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import ProgressBarIcon from '@/assets/icons/ProgressBarIcon.vue'
 
 const emit = defineEmits(['open-loading'])
 const progressPercent = ref(0)
 
-function handleProfileClick() {
+const handleProfileClick = () => {
   emit('open-loading')
 }
 
-function toggleProgress() {
+const toggleProgress = () => {
   progressPercent.value = progressPercent.value === 0 ? 100 : 0
 }
 </script>
+
 <style scoped>
 .progress-nav-bar {
   display: flex;
   align-items: center;
   gap: 1.4em;
-  padding: 49px 25px;
+  padding: 84px 25px;
   z-index: 9999;
 }
 
@@ -70,26 +70,6 @@ function toggleProgress() {
   position: relative;
   width: 105px;
   height: auto;
-}
-
-.squiggly-bg {
-  display: block;
-  width: 100%;
-}
-
-.progress-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  overflow: hidden;
-  transition: width 0.5s ease;
-}
-
-.squiggly-fill {
-  display: block;
-  width: 100%;
 }
 
 .progress-text {

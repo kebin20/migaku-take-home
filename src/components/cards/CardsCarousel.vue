@@ -1,9 +1,6 @@
 <template>
   <div class="cards-carousel-c">
-    <h1
-      class="title"
-      :style="{ fontSize: isToday ? 'var(--title-font-size)' : 'var(--subtitle-font-size)' }"
-    >
+    <h1 class="title" :class="{ 'is-today': isToday }">
       {{ title }}
     </h1>
     <swiper :slides-per-view="2" space-between="0" class="carousel">
@@ -27,7 +24,6 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
-import { defineEmits } from 'vue'
 import { Card } from '@/types/interfaces'
 
 const { title, isToday, cards } = defineProps<{
@@ -38,7 +34,7 @@ const { title, isToday, cards } = defineProps<{
 
 const emit = defineEmits(['cardClicked'])
 
-function handleCardClick(card) {
+const handleCardClick = (card: Card) => {
   emit('cardClicked', card)
 }
 </script>
@@ -54,8 +50,12 @@ function handleCardClick(card) {
 .title {
   font-weight: bold;
   margin-bottom: 8px;
+  font-size: var(--subtitle-font-size);
 }
 
+.title.is-today {
+  font-size: var(--title-font-size);
+}
 .carousel {
   width: 86%;
   height: 205px;
