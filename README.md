@@ -17,10 +17,9 @@
 - Clicking on one of the completed cards will bring up a screen from bottom of the screen
   - When clicking on the study button, a small loading spinner is shown
 
-### Links
+### Link
 
-- Solution URL: []()
-- Live Site URL: []()
+- Live Site URL: [Migaku Test UI](migaku-coding-test.netlify.app)
 
 ### Built with
 
