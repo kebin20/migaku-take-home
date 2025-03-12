@@ -33,7 +33,7 @@ const toggleProgress = () => {
   display: flex;
   align-items: center;
   gap: 1.4em;
-  padding: 84px 25px;
+  padding: 34px 25px;
   z-index: 9999;
 }
 

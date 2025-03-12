@@ -39,5 +39,11 @@ import BookStackIcon from '@/assets/icons/BookStackIcon.vue'
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-nav-bar-button:active {
+  transform: scale(0.9);
 }
 </style>
