@@ -1,15 +1,18 @@
 <template>
   <div class="bottom-nav-bar">
     <button class="bottom-nav-bar-button">
-      <img src="@\assets\icons\books.svg" alt="Book Icon" />
+      <BooksIcon />
     </button>
     <button class="bottom-nav-bar-button">
-      <img src="@\assets\icons\book-stack.svg" alt="Stack of Books Icon" />
+      <BookStackIcon />
     </button>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import BooksIcon from '@/assets/icons/BooksIcon.vue'
+import BookStackIcon from '@/assets/icons/BookStackIcon.vue'
+</script>
 
 <style scoped>
 .bottom-nav-bar {
