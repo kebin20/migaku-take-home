@@ -12,6 +12,7 @@
         :status="initialDeck.status"
         :imageSrc="initialDeck.imageSrc"
         :textColor="initialDeck.textColor"
+        isBottomSheet
       />
       <p>You learned {{ initialDeck.learntWords }} words today</p>
       <StudyPrimaryButton :noOfCards="initialDeck.learntWords" />

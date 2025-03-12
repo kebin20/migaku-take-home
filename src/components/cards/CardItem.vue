@@ -12,7 +12,12 @@
         {{ capitalizedFirstLetter }}
       </p>
     </div>
-    <p class="topic-title">{{ description }}</p>
+    <p
+      class="topic-title"
+      :style="isBottomSheet ? { 'max-width': '175px' } : { 'max-width': '125px' }"
+    >
+      {{ description }}
+    </p>
     <StatusLabel :noOfReviews="noOfReviews" :status="status" />
   </div>
 </template>
@@ -22,7 +27,15 @@ import { computed } from 'vue'
 import { defineEmits } from 'vue'
 import { Deck } from '@/types/interfaces.ts'
 
-const props = defineProps<Deck>()
+const props = defineProps<{
+  imageSrc: Deck['imageSrc']
+  description: Deck['description']
+  backgroundImageStyle: Deck['backgroundImageStyle']
+  noOfReviews: Deck['noOfReviews']
+  status: Deck['status']
+  textColor: Deck['textColor']
+  isBottomSheet: boolean
+}>()
 const emit = defineEmits(['cardClicked'])
 
 const backgroundImageStyleComputed = computed(() => props.backgroundImageStyle || '#f0f0f0')

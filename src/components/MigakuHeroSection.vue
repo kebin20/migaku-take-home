@@ -68,12 +68,12 @@ const toggleHeart = () => {
 
 .earth {
   width: 27%;
-  top: 46%;
+  top: 53%;
   left: 2%;
 }
 
 .planets {
-  top: 23%;
+  top: 25%;
   left: 60%;
   width: 33%;
 }
