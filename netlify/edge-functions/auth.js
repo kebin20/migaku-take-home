@@ -4,10 +4,8 @@ export default async (request, context) => {
   }
 
   const authHeader = request.headers.get('Authorization')
-
-  const username = 'demo-test'
-  const password = 'migaku123'
-
+  const username = Netlify.env.get('AUTH_USERNAME')
+  const password = Netlify.env.get('AUTH_PASSWORD')
   const expectedAuth = 'Basic ' + btoa(`${username}:${password}`)
 
   if (!authHeader || authHeader !== expectedAuth) {
