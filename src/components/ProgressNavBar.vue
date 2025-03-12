@@ -5,14 +5,7 @@
     </button>
     <div class="progress-bar" @click="toggleProgress">
       <div class="progress-wrapper">
-        <img src="@/assets/icons/status-bar.png" alt="Blank Progress" class="squiggly-bg" />
-        <div class="progress-fill" :style="{ width: progressPercent + '%' }">
-          <img
-            src="@/assets/icons/status-bar-full.png"
-            alt="Filled Progress"
-            class="squiggly-fill"
-          />
-        </div>
+        <ProgressBarIcon :fillPercentage="progressPercent" />
       </div>
       <span class="progress-text">{{ progressPercent }}%</span>
     </div>
@@ -21,10 +14,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { defineEmits } from 'vue'
+import ProgressBarIcon from '@/assets/icons/ProgressBarIcon.vue'
 
 const emit = defineEmits(['open-loading'])
-
 const progressPercent = ref(0)
 
 function handleProfileClick() {
@@ -35,7 +27,6 @@ function toggleProgress() {
   progressPercent.value = progressPercent.value === 0 ? 100 : 0
 }
 </script>
-
 <style scoped>
 .progress-nav-bar {
   display: flex;
@@ -71,7 +62,7 @@ function toggleProgress() {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 2em;
   padding: 1em;
-  gap: 1em;
+  gap: 9px;
   cursor: pointer;
 }
 
