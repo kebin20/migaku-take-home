@@ -19,7 +19,7 @@
 
 ### Link
 
-- Live Site URL: [Migaku Test UI](migaku-coding-test.netlify.app)
+- Live Site URL: [Migaku Test UI](https://migaku-coding-test.netlify.app/)
 
 ### Built with
 
