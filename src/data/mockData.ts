@@ -1,7 +1,12 @@
+import saxophoneImg from '@/assets/icons/saxophone.png'
+import dolphinImg from '@/assets/icons/dolphin.png'
+import sakuraImg from '@/assets/icons/sakura.png'
+import scooterImg from '@/assets/icons/scooter.png'
+
 export const today = [
   {
     id: 1,
-    imageSrc: 'src/assets/icons/saxophone.png',
+    imageSrc: saxophoneImg,
     backgroundImageStyle: 'var(--color-saxophone)',
     description: 'Netflix Shows',
     status: 'inReview',
@@ -10,7 +15,7 @@ export const today = [
   },
   {
     id: 2,
-    imageSrc: 'src/assets/icons/dolphin.png',
+    imageSrc: dolphinImg,
     backgroundImageStyle: 'var(--color-dolphin)',
     description: 'YouTube',
     status: 'inReview',
@@ -31,7 +36,7 @@ export const today = [
 export const completedDecks = [
   {
     id: 1,
-    imageSrc: 'src/assets/icons/sakura.png',
+    imageSrc: sakuraImg,
     backgroundImageStyle: 'var(--color-sakura)',
     description: 'Japanese Dramas',
     status: 'completed',
@@ -40,7 +45,7 @@ export const completedDecks = [
   },
   {
     id: 2,
-    imageSrc: 'src/assets/icons/scooter.png',
+    imageSrc: scooterImg,
     backgroundImageStyle: 'var(--color-scooter)',
     description: 'Anime vocab',
     status: 'completed',
