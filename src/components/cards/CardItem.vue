@@ -1,37 +1,29 @@
 <template>
-  <BaseCard>
-    <div class="card-item">
-      <div class="card-image" :style="{ backgroundColor: backgroundImageStyleComputed }">
-        <img
-          v-if="status === 'completed'"
-          src="@/assets/icons/checkmark.png"
-          alt="Checkmark"
-          class="checkmark"
-        />
-        <img v-if="imageSrc" :src="imageSrc" alt="Card Image" class="icon" />
-        <p v-else class="capital-letter" :style="{ color: textColor }">
-          {{ capitalizedFirstLetter }}
-        </p>
-      </div>
-      <p class="topic-title">{{ description }}</p>
-      <StatusLabel :noOfReviews="noOfReviews" :status="status" />
+  <div class="card-item" @click="handleClick">
+    <div class="card-image" :style="{ backgroundColor: backgroundImageStyleComputed }">
+      <img
+        v-if="status === 'completed'"
+        src="@/assets/icons/checkmark.png"
+        alt="Checkmark"
+        class="checkmark"
+      />
+      <img v-if="imageSrc" :src="imageSrc" alt="Card Image" class="icon" />
+      <p v-else class="capital-letter" :style="{ color: textColor }">
+        {{ capitalizedFirstLetter }}
+      </p>
     </div>
-  </BaseCard>
+    <p class="topic-title">{{ description }}</p>
+    <StatusLabel :noOfReviews="noOfReviews" :status="status" />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { defineEmits } from 'vue'
+import { Deck } from '@/types/interfaces.ts'
 
-interface CardItemProps {
-  imageSrc: string
-  description: string
-  backgroundImageStyle?: string
-  status?: string
-  noOfReviews?: number | string
-  textColor?: string
-}
-
-const props = defineProps<CardItemProps>()
+const props = defineProps<Deck>()
+const emit = defineEmits(['cardClicked'])
 
 const backgroundImageStyleComputed = computed(() => props.backgroundImageStyle || '#f0f0f0')
 
@@ -39,6 +31,10 @@ const capitalizedFirstLetter = computed(() => {
   if (!props.description) return ''
   return props.description.charAt(0).toUpperCase()
 })
+
+function handleClick() {
+  emit('cardClicked')
+}
 </script>
 
 <style scoped>

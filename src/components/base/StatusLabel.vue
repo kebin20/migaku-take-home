@@ -47,6 +47,7 @@ const statusStyle = computed(() => {
 .status-label {
   font-family: 'GT Maru', sans-serif;
   font-size: var(--label-font-size);
+  font-weight: bold;
   background-color: gray;
   border-radius: 62px;
   padding: 2px 10px;

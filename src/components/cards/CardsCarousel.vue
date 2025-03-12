@@ -8,14 +8,17 @@
     </h1>
     <swiper :slides-per-view="2" space-between="0" class="carousel">
       <swiper-slide v-for="card in cards" :key="card.id">
-        <CardItem
-          :imageSrc="card.src"
-          :description="card.description"
-          :backgroundImageStyle="card.backgroundImageStyle"
-          :status="card.status"
-          :noOfReviews="card.noOfReviews"
-          :textColor="card.textColor"
-        />
+        <BaseCard>
+          <CardItem
+            :imageSrc="card.imageSrc"
+            :description="card.description"
+            :backgroundImageStyle="card.backgroundImageStyle"
+            :status="card.status"
+            :noOfReviews="card.noOfReviews"
+            :textColor="card.textColor"
+            @cardClicked="handleCardClick(card)"
+          />
+        </BaseCard>
       </swiper-slide>
     </swiper>
   </div>
@@ -24,22 +27,20 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
-
-interface Card {
-  textColor?: string
-  id: number
-  src: string
-  backgroundImageStyle: string
-  description: string
-  status: string
-  noOfReviews: number | string
-}
+import { defineEmits } from 'vue'
+import { Card } from '@/types/interfaces'
 
 const { title, isToday, cards } = defineProps<{
   title: string
-  isToday: boolean
+  isToday?: boolean
   cards: Card[]
 }>()
+
+const emit = defineEmits(['cardClicked'])
+
+function handleCardClick(card) {
+  emit('cardClicked', card)
+}
 </script>
 
 <style scoped>

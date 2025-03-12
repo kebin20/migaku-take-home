@@ -5,21 +5,33 @@
   <main>
     <MigakuHeroSection />
     <div class="carousel-section">
-      <CardsCarousel title="Today" :cards="today" isToday />
-      <CardsCarousel title="Completed" :cards="completedDecks" />
+      <CardsCarousel title="Today" :cards="today" isToday @cardClicked="openBottomSheet" />
+      <CardsCarousel title="Completed" :cards="completedDecks" @cardClicked="openBottomSheet" />
     </div>
   </main>
   <footer>
     <BottomNavBar />
   </footer>
   <LoadingScreen v-if="isLoading" />
+  <BottomSheet
+    v-if="isBottomSheetVisible"
+    :initialDeck="completedDecks[0]"
+    @close="isBottomSheetVisible = false"
+  />
 </template>
 
 <script setup lang="ts">
-import { today, completedDecks } from '@/data/mockData'
 import { ref } from 'vue'
+import { today, completedDecks } from '@/data/mockData'
 
 const isLoading = ref(false)
+const isBottomSheetVisible = ref(false)
+
+function openBottomSheet(deck) {
+  if (deck === completedDecks[0]) {
+    isBottomSheetVisible.value = true
+  }
+}
 
 function openLoading() {
   isLoading.value = true
