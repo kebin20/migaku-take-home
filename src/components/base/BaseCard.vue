@@ -24,5 +24,11 @@ export default {
     0px 9px 20px 0px #00005a24;
   width: 152px;
   height: 180px;
+  transition: transform 0.1s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+.base-card:active {
+  transform: scale(0.95);
 }
 </style>

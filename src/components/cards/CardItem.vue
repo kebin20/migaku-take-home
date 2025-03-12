@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import type { Deck } from '@/types/interfaces.ts'
-import { computed } from 'vue';
+import { computed } from 'vue'
 
 type CardProps = Deck & {
   isBottomSheet?: boolean
