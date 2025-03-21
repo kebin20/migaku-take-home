@@ -1,10 +1,10 @@
-# migaku-ui-test
+# migaku-take-home
 
  ![]()
 
 ## Overview
 
-- A UI implementation test as part of the technical screening process for Migaku
+- A UI implementation test as part of the technical screening process for Migaku Ltd
 
 ### Basic Functions
 
